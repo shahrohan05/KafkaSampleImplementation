@@ -1,0 +1,29 @@
+
+:: Environment
+
+1. Start Zookeeper:
+bin\windows\zookeeper-server-start.bat .\config\zookeeper.properties
+
+2. Start Kafka broker service:
+bin\windows\kafka-server-start.bat config\server.properties
+
+
+:: Topic
+
+3. Create topic:
+bin\windows\kafka-topics.bat --create --topic favorite-movies --bootstrap-server localhost:9092
+
+4. Describe topic:
+bin\windows\kafka-topics.bat --describe --topic favorite-movies --bootstrap-server localhost:9092
+
+5. List topics:
+bin\windows\kafka-topics.bat --list --bootstrap-server localhost:9092
+
+
+:: Producer/Consuner
+
+6. Producer:
+bin\windows\kafka-console-producer.bat --topic favorite-movies --bootstrap-server localhost:9092
+
+7. Consumer:
+bin\windows\kafka-console-consumer.bat --topic favorite-movies --bootstrap-server localhost:9092
